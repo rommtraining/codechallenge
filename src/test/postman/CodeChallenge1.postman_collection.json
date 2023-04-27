@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "12b286a5-aa53-40e3-b294-dbb8458ce311",
+		"name": "CodeChallenge1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15629000"
+	},
+	"item": [
+		{
+			"name": "ObtenerClientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/cliente/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"cliente",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AgregarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"identificacion\": \"9\",\r\n        \"nombres\": \"JORGE\",\r\n        \"apellidos\": \"MONGE\",\r\n        \"paisResidencia\": \"CR\",\r\n        \"paisNacimiento\": \"CR\",\r\n        \"direccionDomicilio\": \"DIRECCION 9\",\r\n        \"telefono\": \"99999999\",\r\n        \"estado\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerClientesPorIdentificacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/api/cliente/por-identificacion/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"cliente",
+						"por-identificacion",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarDatosContactoCliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"paisResidencia\": \"PA\",\r\n    \"direccionDomicilio\": \"Direccion 123456798\",\r\n    \"telefono\": \"123456798\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/cliente/datos-contacto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"cliente",
+						"datos-contacto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InactivarCliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/cliente/inactivar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"cliente",
+						"inactivar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

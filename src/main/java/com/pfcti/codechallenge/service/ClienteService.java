@@ -1,5 +1,6 @@
 package com.pfcti.codechallenge.service;
 
+import com.pfcti.codechallenge.dto.ClienteContactoDto;
 import com.pfcti.codechallenge.dto.ClienteDto;
 import com.pfcti.codechallenge.model.Cliente;
 import com.pfcti.codechallenge.repository.ClienteRepository;
@@ -50,6 +51,16 @@ public class ClienteService {
         return clientesDto;
     }
 
+    public void actualizarDatosContactoCliente(ClienteContactoDto clienteContactoDto){
+        clienteRepository.actualizarDatosContactoCliente(clienteContactoDto.getPaisResidencia(),
+                clienteContactoDto.getDireccionDomicilio(), clienteContactoDto.getTelefono(),
+                clienteContactoDto.getId());
+    }
+
+    public void inactivarCliente(int id){
+        clienteRepository.inactivarCliente(id);
+    }
+
     private ClienteDto deClienteAClienteDto(Cliente cliente) {
         ClienteDto clienteDto = new ClienteDto();
 
@@ -65,4 +76,6 @@ public class ClienteService {
 
         return cliente;
     }
+
+
 }

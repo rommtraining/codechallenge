@@ -5,19 +5,13 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 @Data
-public class ClienteDto {
+public class ClienteContactoDto {
     private int id;
     @NotNull
-    private String identificacion;
-    @NotNull
-    private String nombres;
-    @NotNull
-    private String apellidos;
     @Length(max = 2, min = 2)
     private String paisResidencia;
-    @Length(max = 2, min = 2)
-    private String paisNacimiento;
+    @NotNull
     private String direccionDomicilio;
+    @NotNull
     private String telefono;
-    private Boolean estado;
 }

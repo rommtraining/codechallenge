@@ -1,5 +1,6 @@
 package com.pfcti.codechallenge.api;
 
+import com.pfcti.codechallenge.dto.ClienteContactoDto;
 import com.pfcti.codechallenge.dto.ClienteDto;
 import com.pfcti.codechallenge.service.ClienteService;
 import jakarta.validation.Valid;
@@ -31,5 +32,17 @@ public class ClienteApi {
     @PostMapping
     public void insertarCliente(@Valid @RequestBody ClienteDto clienteDto){
         clienteService.insertarCliente(clienteDto);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/datos-contacto")
+    public void actualizarDatosContactoCliente(@Valid @RequestBody ClienteContactoDto clienteContactoDto){
+        clienteService.actualizarDatosContactoCliente(clienteContactoDto);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/inactivar/{id}")
+    public void actualizarDatosContactoCliente(@PathVariable int id){
+        clienteService.inactivarCliente(id);
     }
 }
